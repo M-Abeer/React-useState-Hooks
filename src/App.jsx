@@ -1,24 +1,28 @@
 import React from "react";
-import "./index.css";
-import { useState } from "react";
+// import { Switch, Route } from "react-router-dom";
+import About from "./About";
+import Contact from "./Contact";
+import Navbar from "./Navbar";
+import Error from "./Error";
+import User from "./User";
+import { Routes, Route, useNavigate } from "react-router-dom";
+import Menu from "./Menu";
+import Search from "./Search";
+
 const App = () => {
-  const [name, setName] = useState("M Abeer");
-  console.log(useState);
+  const navigate = useNavigate();
   return (
     <>
-      <div className="main">
-        <h1>{name}</h1>
-        <button
-          onClick={() => {
-            setName("I am a software engineer.");
-            if (name === "I am a software engineer.") {
-              setName("M Abeer");
-            }
-          }}
-        >
-          Click Me!
-        </button>
-      </div>
+      <Menu />
+      <Routes>
+        <Route path="/" Component={About} />
+        <Route exact path="/contact" Component={Contact} />
+        <Route exact path="/navbar" Component={Navbar} />
+        <Route exact path="/search" Component={Search} />
+        <Route path="/:fname/:lname" Component={User} />
+        {/* <Route path="*" Component={Error} /> */}
+        <Route path="/*" Component={About} />
+      </Routes>
     </>
   );
 };

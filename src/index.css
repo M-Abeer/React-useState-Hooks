@@ -22,3 +22,37 @@ button {
   cursor: pointer;
   border-radius: 10px;
 }
+.active {
+  color: violet;
+}
+.menu {
+  width: 100%;
+  line-height: 60px;
+  background-color: #20232a;
+  display: flex;
+  justify-content: space-around;
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+.search {
+  width: 50%;
+  height: auto;
+  margin: 0 auto;
+  text-align: center;
+}
+.hello {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  flex-direction: column;
+  gap: 20px;
+}
+.image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  object-fit: cover;
+  opacity: 1;
+}
